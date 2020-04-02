@@ -45,6 +45,7 @@
 							</td>
 						</tr>
 						<tr><div class="error">${isRegistered}</div></tr>
+						<tr><div class="error">${message}</div></tr>
 						<tr>
 							<td><div align="right">User Name</div></td>
 							<td><form:input type="text" path="userName" name="userName" /></td>

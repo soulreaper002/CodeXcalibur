@@ -13,7 +13,9 @@ public interface VisitorServiceInterface {
 	List<VisitorEntity> getVisitor(String userName);
 
 	VisitorEntity getVisitorObject(String userName);
+	VisitorEntity getVisitor(int visitorId);
 	VisitorEntity updateVisitorObject(VisitorBean visitorBean);
 	boolean changePassword(String userName,String passWord);
+	int getId(String userName);
 
 }

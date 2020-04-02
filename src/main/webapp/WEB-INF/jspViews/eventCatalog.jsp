@@ -2,12 +2,13 @@
 <%@ include file="/include.jsp"%>
 <%@ taglib prefix="spring"
 	uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
 <title>Welcome to Festival Event Registration System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="StyleSheet" href="css/struts2.css" type="text/css" />
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 
 <script type="text/javascript">
 function previousPage()
@@ -33,15 +34,15 @@ function previousPage()
 					<table align="right" cellpadding="2">
 						<tr>
 							<td width="90">
-							<div id="menu" align="center"><a href="<jstlcore:url value="/index.jsp"/>">
+							<div id="menu" align="center"><a href="<jstlcore:url value="logOut.html"/>">
 							Logout </a></div>
 							</td>
 							<td width="160">
-							<div id="menu" ><a href="<jstlcore:url value="/searchVisitor.htm"/>">
+							<div id="menu" ><a href="<jstlcore:url value="logIn.html"/>">
 							My_Portal </a></div>
 							</td>
 							<td width="90">
-							<div id="menu" align="center"><a href="<jstlcore:url value="/about.jsp"/>">
+							<div id="menu" align="center"><a href="<jstlcore:url value="about.html"/>">
 							About</a><br />
 							</div>
 							</td>
@@ -51,7 +52,7 @@ function previousPage()
 				</tr>
 				<tr>
 					<td width="900">
-					<div align="center"><img src="images/greenhorizontalline.jpg"
+					<div align="center"><img src="/resources/images/greenhorizontalline.jpg"
 						height="5" width="100%" /></div>
 					<br />
 					<div id="content" align="center">
@@ -61,22 +62,25 @@ function previousPage()
 							<th scope="col">Event Id</th>
 							<th scope="col">Event name</th>
 							<th scope="col">Description</th>
-							<th scope="col">Places</th>
+							<th scope="col">Venue</th>
 							<th scope="col">Duration</th>
 							<th scope="col">Event type</th>
-							<th scope="col">Maximum Seats</th>
+							<th scope="col">Schedule</th>
+							<th scope="col">Ticket Price</th>
 							<th scope="col">Available Seats</th>
 						</tr>
 						<jstlcore:forEach items="${allEvents}" var="event" >
 							<tr>
-							<td><jstlcore:out value="${event.eventid}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.name}"></jstlcore:out></td>
+							<td><jstlcore:out value="${event.eventId}"></jstlcore:out></td>
+							<td><jstlcore:out value="${event.eventName}"></jstlcore:out></td>
 							<td><jstlcore:out value="${event.description}"></jstlcore:out></td>
 							<td><jstlcore:out value="${event.place}"></jstlcore:out></td>
 							<td align="center"><jstlcore:out value="${event.duration}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.eventtype}"></jstlcore:out></td>
-							<td align="center"><jstlcore:out value="50"></jstlcore:out></td>	
-							<td align="center"><jstlcore:out value="${event.seatsavailable}"></jstlcore:out></td>
+							<td><jstlcore:out value="${event.eventType}"></jstlcore:out></td>
+							<td><jstlcore:out value="${event.schedule}"></jstlcore:out></td>
+							<td><jstlcore:out value="${event.ticketPrice}"></jstlcore:out></td>
+							<%-- <td align="center"><jstlcore:out value="50"></jstlcore:out></td> --%>	
+							<td align="center"><jstlcore:out value="${event.seatsAvailable}"></jstlcore:out></td>
 							</tr>
 						</jstlcore:forEach>
 

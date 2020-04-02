@@ -66,7 +66,7 @@ public class VisitorDAO implements DAO {
 	@Override
 	public VisitorEntity updateVisitorObject(VisitorBean visitorBean) {
 		Session session = sf.openSession();
-		VisitorEntity entity = new VisitorEntity();
+		VisitorEntity entity = (VisitorEntity)session.load(VisitorEntity.class, dao.getId(visitorBean.getUserName()));
 		entity.setFirstName(visitorBean.getFirstName());
 		entity.setLastName(visitorBean.getLastName());
 		entity.setUserName(visitorBean.getUserName());
@@ -74,9 +74,10 @@ public class VisitorDAO implements DAO {
 		entity.setEmail(visitorBean.getEmail());
 		entity.setPhoneNumber(visitorBean.getPhoneNumber());
 		entity.setAddress(visitorBean.getAddress());
-		
-		session.update(entity);
-		session.close();
+		System.out.println(entity);
+		System.out.println(visitorBean);
+		session.flush();
+		System.out.println("after flush"+entity);
 		return entity;
 	}
 
@@ -94,6 +95,23 @@ public class VisitorDAO implements DAO {
 			result=true;
 		}
 		return result;
+	}
+
+	@Override
+	public VisitorEntity getVisitor(int visitorId) {
+		Session session = sf.openSession();
+		VisitorEntity visitor = (VisitorEntity)session.get(VisitorEntity.class, visitorId);
+		return visitor;
+	}
+
+	@Override
+	public int getId(String userName) {
+		Session session = sf.openSession();
+		Query theQuery = session.createQuery("select id from VisitorEntity where userName=:userName");
+		theQuery.setString("userName", userName);
+		List<Integer> list = theQuery.list();
+		
+		return list.get(0);
 	}
 
 }

@@ -11,8 +11,11 @@ public interface DAO {
 	void saveVisitor(VisitorBean visitorBean);
 
 	String getPassword(String userName);
-
+	
 	List<VisitorEntity> getVisitor(String userName);
 	VisitorEntity updateVisitorObject(VisitorBean visitorBean);
 	boolean changePassword(String userName,String passWord);
+	VisitorEntity getVisitor(int visitorId);
+	int getId(String userName);
+
 }

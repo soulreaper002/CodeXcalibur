@@ -61,7 +61,7 @@
 		transaction-manager="myTransactionManager" />
 
 	<!-- Add support for reading web resources:css,images, -->
-	<mvc:resources location="/resources"
+	<mvc:resources location="/resources/"
 		mapping="/resources/**"></mvc:resources>
 </beans>
 

@@ -77,4 +77,16 @@ public class VisitorService implements VisitorServiceInterface{
 		return dao.changePassword(userName, passWord);
 	}
 
+	@Override
+	public VisitorEntity getVisitor(int visitorId) {
+		// TODO Auto-generated method stub
+		return dao.getVisitor(visitorId);
+	}
+
+	@Override
+	public int getId(String userName) {
+		// TODO Auto-generated method stub
+		return dao.getId(userName);
+	}
+
 }

@@ -2,11 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/include.jsp"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Welcome to Festival Registration System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="StyleSheet" href="css/struts2.css" type="text/css" />
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+
 
 </head>
 
@@ -20,7 +23,7 @@
 				<div id="header">
 					&nbsp;
 					<div align="center">
-						<a href="<jstlcore:url value="/searchVisitor.htm"/>"> Festival
+						<a href="<jstlcore:url value="logIn.html"/>"> Festival
 							Registration System</a>
 					</div>
 
@@ -32,12 +35,12 @@
 								<tr>
 									<td width="90">
 										<div id="menu" align="center">
-											<a href="<jstlcore:url value="/index.jsp"/>"> Logout </a>
+											<a href="<jstlcore:url value="logOut.html"/>"> Logout </a>
 										</div>
 									</td>
 									<td width="160">
 										<div id="menu" align="center">
-											<a href="<jstlcore:url value="/catalog.htm"/>"> Event
+											<a href="<jstlcore:url value="catalog.html"/>"> Event
 												Catalog </a>
 										</div>
 									</td>
@@ -73,17 +76,16 @@
 						<td>
 							<div id="content">
 								<p>FERS, or the Festival Event Registration System, is
-									provided as a free service of the New Codington Chamber of
-									Commerce, to the citizens and visitors of the city of New
-									Codington. FERS allows ease of use to view and registration to
-									various events and activities in the New Codington area.</p>
+									provided as a free service of the CodeXCalibur Society, to the citizens and visitors of the city of
+									TrisKul. FERS allows ease of use to view and registration to
+									various events and activities in the Triskul area.</p>
 								<br />
-								<p>FERS was created in a joint with Accenture, Ltd and the
-									New Codington Chamber of Commerce. Please submit any questions,
+								<p>FERS was created in a joint with Cognizant and BLT, Ltd and the
+									CodeXCalibur Society. Please submit any questions,
 									comments or concerns about the usage, registration, event
 									availability, or any other information presented on this
-									website to the New Codington Chamber of Commerce at
-									questions@newcodcc.gov.</p>
+									website to the CodeXCalibur Society at
+									questions@codexcalibur.op.</p>
 								<br></br>
 								<p align="center" style="font-family: calibri; color: #6666CC;">Please
 									note that any events or activities that are schedule via the
@@ -94,7 +96,7 @@
 									privacy policy.</p>
 								<br />
 								<p align="center" style="font-family: calibri; color: #6666CC;">©Copyright,
-									2012 by the New Codington Chamber of Commerce. All Rights
+									2020 by the CodeXCalibur Society. All Rights
 									Reserved.</p>
 							</div>
 						</td>
