@@ -241,7 +241,7 @@ public class VisitorController {
 
 		return "eventCatalog";
 	}
-	@RequestMapping("/logOut")
+	@RequestMapping("/logOut.html")
 	public String logout(Model theModel)
 	{
 		theModel.addAttribute("message", "logged Out SuccessFully");

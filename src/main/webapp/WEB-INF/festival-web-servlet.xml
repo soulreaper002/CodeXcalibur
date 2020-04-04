@@ -55,6 +55,8 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	<bean></bean>
 
 	<!-- Enable Configuration of Transactional behaviour based on annotations -->
 	<tx:annotation-driven
