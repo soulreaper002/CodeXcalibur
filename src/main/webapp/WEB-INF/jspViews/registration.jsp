@@ -6,6 +6,8 @@
 <html>
 <head>
 <title>Welcome to Festival Registration System</title>
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 
 <style>
 .error {
@@ -40,7 +42,7 @@
 												<tr>
 													<td width="90">
 														<div id="menu" align="center">
-															<a href="<jstlcore:url value="/index.jsp"/>">
+															<a href="<jstlcore:url value="/logIn"/>">
 																Login_Page </a>
 														</div>
 													</td>

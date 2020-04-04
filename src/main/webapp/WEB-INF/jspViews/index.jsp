@@ -6,7 +6,9 @@
 <head>
 <title>Welcome to Festival Event Registration System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+
 
 </head>
 <style>
@@ -40,7 +42,7 @@
 							<!--content begin -->
 							<td colspan="2" align="center">
 								<div id="content">
-									<h3>Portal Login Page</h3>
+									<h3 style="color: white;">Portal Login Page</h3>
 								</div>
 							</td>
 						</tr>

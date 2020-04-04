@@ -9,6 +9,30 @@
 <title>Register For Event</title>
 <link href="<jstlcore:url value="/resources/css/styles.css"/>"
 	rel="stylesheet">
+	<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+	
+<script type="text/javascript">
+function getSeats(){
+
+  var z = document.forms["seats"]["noOfSeats"].value;
+
+  if(!/^[1-9]+$/.test(z)){
+    alert("Please only enter numeric characters! (Allowed input:0-9)");
+    return false;
+  }
+	if((/^[1-9]+$/.test(z) &&(z>${event.seatsAvailable})
+			{
+	    alert("only "+${event.seatsAvailable}+"available.");
+	    return false;
+		
+		}
+	else
+		return true;
+
+}
+
+</script>
 </head>
 
 <body>
@@ -42,18 +66,22 @@
 						Schedule :
 						<jstlcore:out value="${event.schedule}"></jstlcore:out>
 					</p>
-					
+
 				</td>
 			</tr>
 			<tr>
 				<td>
-				<form action="confirmSeats.html" method="post">
-					<input type="hidden" name="visitorId" value="${visitorId}"/>
-					<input type="hidden" name="eventId" value="${event.eventId}"/>
-					No of Seats:&nbsp; <input type="number" name="noOfSeats" size="2"/><br>
-					<div colspan="3" align="right"><input type="submit" value="Get Seats"></div><br><br />
-				</form>
-				
+					<form action="confirmSeats.html" method="post">
+						<input type="hidden" name="visitorId" value="${visitorId}" /> <input
+							type="hidden" name="eventId" value="${event.eventId}" /> No of
+						Seats:&nbsp; <input type="number" name="noOfSeats" size="2" /><br>
+						<div colspan="3" align="right">
+							<input type="submit" value="Get Seats"
+								onsubmit="return getSeats()">
+						</div>
+						<br> <br />
+					</form>
+
 				</td>
 			</tr>
 		</table>

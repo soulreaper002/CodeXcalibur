@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
+
 <title>Insert title here</title>
 </head>
 <body>

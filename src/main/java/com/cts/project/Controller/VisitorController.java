@@ -229,21 +229,22 @@ public class VisitorController {
 		return "visitormain";
 
 	}
+
 	@RequestMapping("/about.html")
-	public String aboutPage()
-	{
-	return "about";	
+	public String aboutPage() {
+		return "about";
 	}
+
 	@RequestMapping("/catalog.html")
-	public String eventcatalog(Model theModel)
-	{
+	public String eventcatalog(Model theModel) {
 		theModel.addAttribute("allEvents", eService.showEvent());
 
 		return "eventCatalog";
 	}
-	@RequestMapping("/logOut.html")
-	public String logout(Model theModel)
-	{
+
+	@RequestMapping("/logOut")
+	public String logout(Model theModel) {
+		theModel.addAttribute("vLogin", new VisitorLoginBean());
 		theModel.addAttribute("message", "logged Out SuccessFully");
 		return "index";
 	}

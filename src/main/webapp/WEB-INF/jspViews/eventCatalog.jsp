@@ -9,6 +9,8 @@
 <title>Welcome to Festival Event Registration System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 
 <script type="text/javascript">
 function previousPage()
@@ -38,7 +40,7 @@ function previousPage()
 							Logout </a></div>
 							</td>
 							<td width="160">
-							<div id="menu" ><a href="<jstlcore:url value="logIn.html"/>">
+							<div id="menu" align="center"><a href="<jstlcore:url value="logIn.html"/>">
 							My_Portal </a></div>
 							</td>
 							<td width="90">

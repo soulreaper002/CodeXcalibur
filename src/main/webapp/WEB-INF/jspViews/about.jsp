@@ -9,6 +9,8 @@
 <title>Welcome to Festival Registration System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />" rel="stylesheet">
 
 
 </head>

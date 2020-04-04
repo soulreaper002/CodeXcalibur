@@ -40,18 +40,18 @@ public class EventController {
 	@RequestMapping("/login.html")
 	public String login()
 	{
-		return "redirect:/visitor/logIn.html";
+		return "redirect:/FestivalPortal/visitor/logIn.html";
 	}
 	
 	@RequestMapping("/logOut.html")
 	public String logout()
 	{
-		return "redirect:/visitor/logOut.html";
+		return "redirect:/FestivalPortal/visitor/logOut.html";
 	}
 	
 	@RequestMapping("/about.html")
 	public String about()
 	{
-		return "redirect:/visitor/about.html";
+		return "redirect:/FestivalPortal/visitor/about.html";
 	}
 }

@@ -2,13 +2,17 @@
 <%@ taglib prefix="spring"
 	uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstlcore"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <html>
 <head>
 <title>Welcome to Festival Event Registration System</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link href="<jstlcore:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styles.css" />"
+	rel="stylesheet">
 
 <style>
 .error {
@@ -20,7 +24,6 @@
 </head>
 
 <body>
-
 	<table width="80%" align="center" border="2">
 		<tr>
 			<td>
@@ -36,7 +39,7 @@
 								<tr>
 									<td width="90">
 										<div id="menu" align="center">
-											<a href="<jstlcore:url value="/logOut.html"/>"> Logout </a>
+											<a href="<jstlcore:url value="logOut.html"/>"> Logout </a>
 										</div>
 									</td>
 									<td width="160">
@@ -74,7 +77,11 @@
 												portal page.....
 											</h3>
 										</div>
-								<tr class="error"><div id="m">${message}</div></tr>
+								<tr>
+									<div style="color: red; font-size: 13px; font-weight: bold;">
+										<p>${message}</p>
+									</div>
+								</tr>
 								<table cellpadding="4" border="1">
 									<tr>
 										<td width="1000">
@@ -86,10 +93,12 @@
 														here </a>
 
 												</p>
-												
+
 												<p class="style1">
 													Name :
-													<jstlcore:out value="${visitor.firstName}"></jstlcore:out>&nbsp; <jstlcore:out value="${visitor.lastName}"></jstlcore:out>
+													<jstlcore:out value="${visitor.firstName}"></jstlcore:out>
+													&nbsp;
+													<jstlcore:out value="${visitor.lastName}"></jstlcore:out>
 												</p>
 												<p class="style1">
 													Visitor ID:
@@ -134,7 +143,11 @@
 											<th scope="col">Schedule</th>
 											<th scope="col">Action</th>
 										</tr>
-									<tr align="center">${messageEvent}</tr>
+										<tr align="center">
+											<div id="m">
+												<p style="color: red; font-size: 13px; font-weight: bold;">${messageEvent}</p>
+											</div>
+										</tr>
 										<jstlcore:forEach items="${regEvents}" var="regEvent">
 											<tr align="center">
 												<td><jstlcore:out
@@ -151,12 +164,12 @@
 														value="${regEvent.duration}"></jstlcore:out></td>
 												<td align="center"><jstlcore:out
 														value="${regEvent.eventType}"></jstlcore:out></td>
-														<td align="center"><jstlcore:out
+												<td align="center"><jstlcore:out
 														value="${regEvent.schedule}"></jstlcore:out></td>
 												<td width="100px" bgcolor="#CCCC99"><a
-													href="<jstlcore:url value="eventunreg.html?eventId=${regEvent.eventId}&visitorId=${visitor.id}"/>" onclick="if(!(confirm('Are you sure you want to cancel the tickets?'))) return false">Cancel Tickets</a>
-
-												</td>
+													href="<jstlcore:url value="eventunreg.html?eventId=${regEvent.eventId}&visitorId=${visitor.id}"/>"
+													onclick="if(!(confirm('Are you sure you want to cancel the tickets?'))) return false">Cancel
+														Tickets</a></td>
 											</tr>
 										</jstlcore:forEach>
 										<tr>
@@ -201,13 +214,13 @@
 						<jstlcore:forEach items="${allEvents}" var="event">
 							<tr>
 								<td><jstlcore:out value="${event.eventId}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.eventName}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.description}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.place}"></jstlcore:out></td>
-							<td align="center"><jstlcore:out value="${event.duration}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.eventType}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.schedule}"></jstlcore:out></td>
-							<td><jstlcore:out value="${event.ticketPrice}"></jstlcore:out></td>
+								<td><jstlcore:out value="${event.eventName}"></jstlcore:out></td>
+								<td><jstlcore:out value="${event.description}"></jstlcore:out></td>
+								<td><jstlcore:out value="${event.place}"></jstlcore:out></td>
+								<td align="center"><jstlcore:out value="${event.duration}"></jstlcore:out></td>
+								<td><jstlcore:out value="${event.eventType}"></jstlcore:out></td>
+								<td><jstlcore:out value="${event.schedule}"></jstlcore:out></td>
+								<td><jstlcore:out value="${event.ticketPrice}"></jstlcore:out></td>
 								<jstlcore:choose>
 									<jstlcore:when test="${event.seatsAvailable != 0}">
 										<td width="100px" bgcolor="#CCCC99" align="center"><jstlcore:out
